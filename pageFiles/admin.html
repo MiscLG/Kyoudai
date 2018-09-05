@@ -1,0 +1,22 @@
+<!DOCTYPE HTML>
+<hmtl>
+  <head>
+    <title>Home</title>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+  </head>
+  <body>
+    {% include "nav.html" %}
+
+    <div id="container">
+      <h1>Add a picture to the database</h1>
+          <form action= {{upload_url}} method="POST" enctype="multipart/form-data">
+          <!--
+              To upload files to the blobstore, the request method must be "POST" and enctype must be set to "multipart/form-data".
+          !-->
+              Name: <input type="text" width:100px name="title"><br>
+              Upload File: <input type="file" name="file"><br>
+            <input type="submit" name="submit" value="Submit">
+          </form>
+    </div>
+  </body>
+</html>

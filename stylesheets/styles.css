@@ -1,0 +1,54 @@
+body {
+  margin:0;
+  padding:0;
+  background-color: black;
+  color:white;
+}
+
+h1 {
+  font-family: 'Dosis', sans-serif;
+}
+p {
+  font-family: 'Jura', sans-serif;
+}
+#logo{
+  display:inline-block;
+  width:40%;
+}
+#siteNav{
+    display:block;
+    /*background-color:blue;*/
+    text-align:center;
+    width:100%;
+    margin: 0 0 2% 0;
+    padding: 1% 0 0 0;
+}
+#home, #adminHome {
+  color:red;
+  font-size: 36pt;
+}
+#container {
+  padding:0 10%;
+}
+.siteLinks{
+    font-family: 'Permanent Marker', serif;
+    font-size: 16pt;
+    white-space: nowrap;
+    display:inline-block;
+    position:relative;
+    vertical-align: middle;
+    /*background-color:yellow;*/
+    text-decoration: none;
+    width:19%;
+    margin:0 auto;
+    padding: 2% 0 1% 0;
+    color:white;
+}
+@media screen and (min-width: 769px){
+  #logo {
+    width:25%;
+  }
+  .siteLinks{
+
+  }
+}

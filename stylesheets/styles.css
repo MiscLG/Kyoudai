@@ -34,7 +34,7 @@ footer{
     text-decoration: none;
     width:22%;
     margin:3% auto;
-    padding: 2% 0 1% 0;
+    padding: 2% 0 0 0;
     color:white;
 }
 .externalLinks {
@@ -43,13 +43,15 @@ footer{
   color:white;
 }
 #home, #adminHome {
+  padding-top:0;
   color:red;
   font-size: 36pt;
   width:10%
 }
 #logo{
-  display:inline-block;
-  width:40%;
+  display:block;
+  width:100%;
+  margin:0 auto;
 }
 #siteNav{
     display:block;
@@ -72,6 +74,6 @@ footer{
 
   }
   #logo {
-    width:25%;
+    width: 40%;
   }
 }

@@ -1,16 +1,16 @@
 @media screen and (min-width: 769px){
   #clubInfo, #eboardInfo {
     display: inline-block;
-    width:40%;
+    width:45%;
     text-align: left;
     vertical-align:top;
   }
   #eboardInfo {
-    padding-right:5%;
+    padding-right:4%;
     border-right: 3pt solid red;
   }
   #clubInfo {
-    padding-left: 5%;
+    padding-left:4%;
   }
 
   #container {

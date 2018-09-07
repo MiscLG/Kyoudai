@@ -1,15 +1,51 @@
 body {
+  height:100%;
   margin:0;
   padding:0;
   background-color: black;
   color:white;
+  font-family: 'Jura', sans-serif;
+}
+html {
+  height:100%;
 }
 
-h1 {
+h1, h2 {
   font-family: 'Dosis', sans-serif;
 }
-p {
-  font-family: 'Jura', sans-serif;
+footer{
+  display:block;
+  width:100%;
+  border-top: 3pt solid red;
+  margin:5% auto 0 auto;
+  padding:2% 0 0%  0;
+}
+.red {
+  color:red;
+}
+.siteLinks{
+    font-family: 'Permanent Marker', serif;
+    font-size: 27pt;
+    white-space: nowrap;
+    display:inline-block;
+    position:relative;
+    vertical-align: middle;
+    /*background-color:yellow;*/
+    text-decoration: none;
+    width:22%;
+    margin:3% auto;
+    padding: 2% 0 1% 0;
+    color:white;
+}
+.externalLinks {
+  text-decoration: none;
+  list-style-type: none;
+  color:white;
+}
+#home, #adminHome {
+  color:red;
+  font-size: 36pt;
+  width:10%
 }
 #logo{
   display:inline-block;
@@ -20,35 +56,22 @@ p {
     /*background-color:blue;*/
     text-align:center;
     width:100%;
-    margin: 0 0 2% 0;
+    margin: 0;
     padding: 1% 0 0 0;
 }
-#home, #adminHome {
-  color:red;
-  font-size: 36pt;
-}
 #container {
-  padding:0 10%;
+  min-height:100%;
+  padding:0 15%;
 }
-.siteLinks{
-    font-family: 'Permanent Marker', serif;
-    font-size: 16pt;
-    white-space: nowrap;
-    display:inline-block;
-    position:relative;
-    vertical-align: middle;
-    /*background-color:yellow;*/
-    text-decoration: none;
-    width:19%;
-    margin:0 auto;
-    padding: 2% 0 1% 0;
-    color:white;
+#copyright {
+  font-family: 'Permanent Marker', serif;
 }
+
 @media screen and (min-width: 769px){
-  #logo {
-    width:25%;
-  }
   .siteLinks{
 
+  }
+  #logo {
+    width:25%;
   }
 }

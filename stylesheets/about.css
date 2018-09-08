@@ -1,3 +1,9 @@
+#clubInfo, #eboardInfo {
+  border: 0;
+  display: block;
+  width:100%;
+}
+
 @media screen and (min-width: 769px){
   #clubInfo, #eboardInfo {
     display: inline-block;
@@ -12,7 +18,6 @@
   #clubInfo {
     padding-left:4%;
   }
-
   #container {
     text-align: right;
   }

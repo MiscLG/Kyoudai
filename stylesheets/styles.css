@@ -20,37 +20,49 @@ footer{
   margin:5% auto 0 auto;
   padding:2% 0 0%  0;
 }
-.red {
-  color:red;
-}
+
 .siteLinks{
     font-family: 'Permanent Marker', serif;
-    font-size: 27pt;
+    font-size: 14pt;
     white-space: nowrap;
     display:inline-block;
     position:relative;
     vertical-align: middle;
     /*background-color:yellow;*/
     text-decoration: none;
-    width:22%;
-    margin:3% auto;
+    margin-right:4%;
     padding: 2% 0 0 0;
     color:white;
 }
-.externalLinks {
+.siteLinks:hover {
+  color:red;
+}
+.externalLinks, .socialLinks {
   text-decoration: none;
   list-style-type: none;
   color:white;
 }
+.externalLinks:hover, .socialLinks:hover {
+  color:red;
+}
+.red {
+  color:red;
+}
+.heading{
+  font-size:24pt;
+  font-weight: bold;
+  font-family: 'Dosis', sans-serif;
+}
 #home, #adminHome {
+  text-align:center;
   padding-top:0;
   color:red;
   font-size: 36pt;
-  width:10%
+  width:5%;
 }
 #logo{
   display:block;
-  width:100%;
+  width:125%;
   margin:0 auto;
 }
 #siteNav{
@@ -58,12 +70,12 @@ footer{
     /*background-color:blue;*/
     text-align:center;
     width:100%;
-    margin: 0;
+    margin: 0 auto 5% auto;
     padding: 1% 0 0 0;
 }
 #container {
   min-height:100%;
-  padding:0 15%;
+  padding:0 10%;
 }
 #copyright {
   font-family: 'Permanent Marker', serif;
@@ -71,9 +83,9 @@ footer{
 
 @media screen and (min-width: 769px){
   .siteLinks{
-
+    font-size:24pt;
   }
   #logo {
-    width: 40%;
+    width: 60%;
   }
 }

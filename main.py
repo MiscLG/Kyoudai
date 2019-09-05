@@ -41,6 +41,7 @@ def authUser(template):
                 )
             user.put()
         var['login_status'] = ('<a href="%s" id="login" class="siteLinks">Sign out</a>' % logout_url)
+        var['profile'] = ('<a href="/profile" id="login" class="siteLinks">My Page</a>')
         if users.is_current_user_admin():
             var['home']= 'adminHome'
             var['admin']=('<a href="/admin" id="admin" class="siteLinks">Admin</a>')
@@ -52,11 +53,10 @@ class MainHandler(webapp2.RequestHandler):
     def get(self):
         page = jinja.get_template('index.html')
         var = authUser(self)
-
         self.response.write(page.render(var))
 class ContactHandler(webapp2.RequestHandler):
     def get(self):
-        contact = jinja.get_template('contact.html')
+        contact = jinja.get_template('social.html')
         var = authUser(self)
         self.response.write(contact.render(var))
 class AboutHandler(webapp2.RequestHandler):
@@ -64,6 +64,16 @@ class AboutHandler(webapp2.RequestHandler):
         about = jinja.get_template('about.html')
         var = authUser(self)
         self.response.write(about.render(var))
+class UserHandler(webapp2.RequestHandler):
+    def get(self):
+        html = jinja.get_template('profile.html')
+        var = authUser(self)
+        #user = users.get_current_user()
+        #if user:
+        #    self.response.write(html.render(var))
+        #else:
+        #    self.response.write(errorPage.render())
+        self.response.write(html.render(var))
 
 class AdminHandler(webapp2.RequestHandler):
     def get(self):
@@ -75,7 +85,6 @@ class AdminHandler(webapp2.RequestHandler):
         else:
             template.response.write('Not an administrator')
             self.redirect("/")
-
 
 class PhotoUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
     def post(self):
@@ -94,7 +103,6 @@ class PhotoUploadHandler(blobstore_handlers.BlobstoreUploadHandler):
         user_photo.put()
         self.redirect('/media/%s' % upload.key())
 
-
 class MediaHandler(blobstore_handlers.BlobstoreDownloadHandler):
     def get(self, photo_key):
         if not blobstore.get(photo_key):
@@ -102,13 +110,12 @@ class MediaHandler(blobstore_handlers.BlobstoreDownloadHandler):
         else:
             self.send_blob(photo_key)
 
-
-
 app = webapp2.WSGIApplication([
     ('/', MainHandler),
-    ('/contact',ContactHandler),
+    ('/social',ContactHandler),
     ('/admin', AdminHandler),
     ('/about', AboutHandler),
+    ('/profile', UserHandler),
     ('/upload_photo', PhotoUploadHandler),
     ('/media/([^/]+)?', MediaHandler),
 ], debug=True)
